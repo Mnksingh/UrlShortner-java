@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URL Shortener</title>
+</head>
+<body>
+  <h2>Shorten your URL</h2>
+  <input type="text" id="urlInput" placeholder="Enter URL">
+  <button onclick="shortenUrl()">Shorten</button>
+  <p id="result"></p>
+
+  <script>
+    async function shortenUrl() {
+      const url = document.getElementById("urlInput").value;
+      const response = await fetch("http://localhost:8080/shorten", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: url })
+      });
+
+      // Agar backend JSON return kar raha hai
+      const shortUrl = await response.text(); 
+      document.getElementById("result").innerHTML =
+        `Short URL: <a href="${shortUrl}" target="_blank">${shortUrl}</a>`;
+    }
+  </script>
+</body>
+</html>
