@@ -36,5 +36,4 @@ public class UrlMapping {
     public void setShortCode(String shortCode) {
         this.shortCode = shortCode;
     }
-// Getters and Setters (zaroor likhna — bhoolna mat)
 }

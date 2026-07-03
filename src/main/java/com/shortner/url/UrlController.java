@@ -18,7 +18,7 @@ public class UrlController {
     public String shortenUrl(@RequestBody Map<String, String> request) {
         String originalUrl = request.get("url");
         String shortCode = service.createShortUrl(originalUrl);
-        return "http://localhost:8080/r/" + shortCode;  // /r/ add kiya
+        return "http://localhost:8080/r/" + shortCode;
     }
 
     @GetMapping("/r/{code}")

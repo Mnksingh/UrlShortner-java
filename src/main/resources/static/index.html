@@ -12,7 +12,7 @@
   <script>
     async function shortenUrl() {
       const url = document.getElementById("urlInput").value;
-      const response = await fetch("/shorten", {  // localhost hardcode mat karo
+      const response = await fetch("/shorten", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ url: url })
