@@ -12,11 +12,11 @@
   <script>
     async function shortenUrl() {
       const url = document.getElementById("urlInput").value;
-      const response = await fetch("http://localhost:8080/shorten", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: url })
-      });
+      const response = await fetch("/shorten", {  // localhost hardcode mat karo
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ url: url })
+});
 
       // Agar backend JSON return kar raha hai
       const shortUrl = await response.text(); 
